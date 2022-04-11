@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\LocationsController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\PhotoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('locations', LocationsController::class);
+Route::apiResource('index', IndexController::class);
+Route::apiResource('photos', PhotoController::class);
+
+//LOCATIONS
+Route::get('regions/{id}', [LocationsController::class, 'showRegions']);
+Route::get('countries', [LocationsController::class, 'showCountries']);
