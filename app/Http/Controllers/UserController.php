@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Location;
-use App\Models\LocationsRegion;
-use http\Env\Response;
 use Illuminate\Http\Request;
 
-class LocationsController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,7 +34,7 @@ class LocationsController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
@@ -48,11 +45,7 @@ class LocationsController extends Controller
      */
     public function show($id)
     {
-        $regions = Location::where('country_id', $id)
-            ->whereNotNull('name')->get();
-
-        /*$response = new Response($regions, Response::HTTP_OK);*/
-        return \response()->json(['locations' => $regions]);
+        //
     }
 
     /**
